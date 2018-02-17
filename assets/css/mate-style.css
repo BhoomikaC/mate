@@ -1,0 +1,212 @@
+.pad-0{
+    padding: 0;
+}
+
+.alert{
+    position: fixed;
+    top: 30px;
+    left: 30%;
+    z-index: 9999;
+    width: 40%;
+    text-align: center;
+}
+
+.btn-primary{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.navbar-nav > li form > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    text-transform: capitalize;
+}
+nav.navbar-fixed-top .navbar-nav > li > form > a:not(.btn){
+    color: #bbb;
+}
+
+.text-success{
+    color: #77ab59;
+}
+
+.register-link{
+    margin-left: 10px;
+}
+
+.contact-info{
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    border: none;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #fff;
+}
+
+.validation_errors p{
+    color: red;
+}
+
+#user-type-modal .radio-button{
+    margin-right: 15px;
+}
+#user-type-modal .modal-popup{
+    background: none;
+}
+
+.radio-button.active{
+    border-color: #fff;
+}
+
+#user-type-modal .bg-success{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+#user-type-modal .modal-footer{
+    border-top: none;
+}
+
+.popup-form .form-control{
+    padding: 10px 15px;
+}
+
+
+
+#student-registration-modal .modal-dialog, #school-registration-modal .modal-dialog{
+    max-width: none;
+    width: 55%;
+}
+
+#student-registration-modal .modal-dialog form.popup-form, #school-registration-modal .modal-dialog form.popup-form{
+    max-width: none;
+    width: 90%;
+}
+
+#gallery-header{
+    padding-top: 150px;
+}
+
+.subscribe-button{
+    background-color: #337ab7;
+}
+.card{
+    height: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.video-thumbnail{
+    height: 500px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.video-thumbnail, .my-4 {
+    margin-bottom: 1.5rem!important;
+    
+}
+.my-4 {
+    margin-bottom: 1.5rem!important;
+    margin-top: 1.5rem!important;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.card-footer{
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+/* 
+    *
+    * media queries 
+    *
+*/
+
+
+
+@media (min-width: 768px){
+    .navbar-nav > li form > a {
+        padding: 15px 25px;
+        font-size: 16px;
+        color: white;
+    }
+}
+
+@media (max-width: 1024px){
+    header#intro{
+        height: 500px !important;
+    }
+}
+
+@media (max-width: 768px){
+    #student-registration-modal, #school-registration-modal {
+        position: absolute;
+        top: 10px;
+    }
+    
+    #student-registration-modal .modal-dialog, #school-registration-modal .modal-dialog{
+        width: 100%;
+    }
+    #student-registration-modal .modal-popup, #school-registration-modal .modal-popup{
+        padding: 45px 0;
+    }
+    .video-thumbnail{
+        max-width: 100%;
+        margin-bottom: 3rem!important;
+    }
+    #gallery-header .jumbotron{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .navbar-nav > li form > a, .navbar-nav > li > a {
+        padding: 15px 0;
+        font-size: 16px;
+        color: white;
+    }
+    .video-thumbnail{
+        height: 700px;
+    }
+    .video-thumbnail iframe{
+        height: 400px;
+    }
+}
+
+
