@@ -37,9 +37,15 @@
             $encrypted_pwd = password_hash($user_data['password'], PASSWORD_BCRYPT, $options);
             $user_data['password'] = $encrypted_pwd;
 
-            $inserted_data = $this->db->insert('students', $user_data);
-            return $inserted_data;
-
+            if($user_data['registration_form'] == 'student'){
+                unset($user_data['registration_form']);
+                $inserted_data = $this->db->insert('students', $user_data);
+                return $inserted_data;
+            }else if($user_data['registration_form'] == 'school'){
+                unset($user_data['registration_form']);
+                $inserted_data = $this->db->insert('schools', $user_data);
+                return $inserted_data;
+            }
         }
 
     }
