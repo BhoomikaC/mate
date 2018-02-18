@@ -70,7 +70,7 @@
             $this->form_validation->set_rules('father_name', "Father's Name", 'trim|required|min_length[3]');
 
             $this->form_validation->set_rules('dob', 'Date of Birth', 'trim|required');
-            $this->form_validation->set_rules('gender', 'Gender', 'trim');
+            $this->form_validation->set_rules('gender', 'Gender', 'trim|required');
             $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required|min_length[10]');
             
             

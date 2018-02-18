@@ -8,13 +8,15 @@
 	<?php 
 
 		if($this->session->flashdata('login_success')){
-			echo '<div class="alert alert-success" role="alert">';
+			echo '<div class="alert alert-success alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				echo $this->session->flashdata("login_success");
 			echo '</div>';
 		}	
 
 		if($this->session->flashdata('registration_success')){
-			echo '<div class="alert alert-success" role="alert">';
+			echo '<div class="alert alert-success alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				echo $this->session->flashdata('registration_success');
 			echo '</div>';
 		}
@@ -24,7 +26,8 @@
 	<?php 
 
 		if($this->session->flashdata('login_failed')){
-			echo '<div class="alert alert-danger" role="alert">';
+			echo '<div class="alert alert-danger alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				echo $this->session->flashdata("login_failed");
 			echo "</div>";
 		}	
@@ -554,7 +557,7 @@ mate@mate.org.in
 						<div class="validation_errors">
 							<?php echo $this->session->flashdata('errors'); ?>
 						</div>
-				<?php endif; ?>
+					<?php endif; ?>
 
 					<?php echo form_open('users/login', $attributes); ?>
 
@@ -605,8 +608,9 @@ mate@mate.org.in
 						<input type="text" name="father_name" value="<?php echo set_value('father_name'); ?>" class="form-control" id="father_name" placeholder="Enter Your Father's Name">
 						<input type="date" name="dob" value="<?php echo set_value('dob'); ?>" class="form-control" id="dob" placeholder="Enter Your Date of Birth">
 						
-						<div class="dropdown">
-							<button name="gender" id="gender-label" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div class="dropdown gender-dropdown">
+							<input type="hidden" name="gender"/>
+							<button id="gender-button" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Gender
 							</button>
 							<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="gender-label">
@@ -614,6 +618,7 @@ mate@mate.org.in
 								<li class="animated lightSpeedIn"><a href="#">Female</a></li>
 							</ul>
 						</div>
+						
 					</div>
 					<div class="col-md-6">
 						<input type="phone" name="phone_number" value="<?php echo set_value('phone_number'); ?>" class="form-control" id="phone_number" placeholder="Enter Your Contact Number">
