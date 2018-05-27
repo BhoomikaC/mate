@@ -8,13 +8,15 @@
 	<?php 
 
 		if($this->session->flashdata('login_success')){
-			echo '<div class="alert alert-success" role="alert">';
+			echo '<div class="alert alert-success alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				echo $this->session->flashdata("login_success");
 			echo '</div>';
 		}	
 
 		if($this->session->flashdata('registration_success')){
-			echo '<div class="alert alert-success" role="alert">';
+			echo '<div class="alert alert-success alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				echo $this->session->flashdata('registration_success');
 			echo '</div>';
 		}
@@ -24,8 +26,15 @@
 	<?php 
 
 		if($this->session->flashdata('login_failed')){
-			echo '<div class="alert alert-danger" role="alert">';
+			echo '<div class="alert alert-danger alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				echo $this->session->flashdata("login_failed");
+			echo "</div>";
+		}	
+		if($this->session->flashdata('registration_failed')){
+			echo '<div class="alert alert-danger alert-dismissible" role="alert">';
+				echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+				echo $this->session->flashdata("registration_failed");
 			echo "</div>";
 		}	
 
@@ -40,7 +49,7 @@
 							
 							<h1 class="white typed">Mind Activation Through Education.</h1>
 							<span class="typed-cursor">|</span>
-							<p>A Mental Health Club to create a empowered,
+							<p>A Mental Health Club to create an empowered,
 							healthy mindset for the students to help them develop
 							their cognitive and sociocultural skills in addition to
 							excellence in academics and extra curricular activities.</p>
@@ -554,7 +563,7 @@ mate@mate.org.in
 						<div class="validation_errors">
 							<?php echo $this->session->flashdata('errors'); ?>
 						</div>
-				<?php endif; ?>
+					<?php endif; ?>
 
 					<?php echo form_open('users/login', $attributes); ?>
 
@@ -598,15 +607,16 @@ mate@mate.org.in
 				<?php echo form_open('users/register', $attributes); ?>
 
 					<div class="col-md-6">
-						<input type="hidden" name="student-form">
+						<input type="hidden" name="registration-form" value="student">
 						<input type="text" name="username" value="<?php echo set_value('username'); ?>" class="form-control" id="username" placeholder="Enter Username">
 						<input type="text" name="first_name" value="<?php echo set_value('first_name'); ?>" class="form-control" id="first_name" placeholder="Enter First Name">
 						<input type="text" name="last_name" value="<?php echo set_value('last_name'); ?>" class="form-control" id="last_name" placeholder="Enter Last Name">
 						<input type="text" name="father_name" value="<?php echo set_value('father_name'); ?>" class="form-control" id="father_name" placeholder="Enter Your Father's Name">
 						<input type="date" name="dob" value="<?php echo set_value('dob'); ?>" class="form-control" id="dob" placeholder="Enter Your Date of Birth">
 						
-						<div class="dropdown">
-							<button name="gender" id="gender-label" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div class="dropdown gender-dropdown">
+							<input type="hidden" name="gender"/>
+							<button id="gender-button" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Gender
 							</button>
 							<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="gender-label">
@@ -614,6 +624,7 @@ mate@mate.org.in
 								<li class="animated lightSpeedIn"><a href="#">Female</a></li>
 							</ul>
 						</div>
+						
 					</div>
 					<div class="col-md-6">
 						<input type="phone" name="phone_number" value="<?php echo set_value('phone_number'); ?>" class="form-control" id="phone_number" placeholder="Enter Your Contact Number">
@@ -653,7 +664,7 @@ mate@mate.org.in
 				?>
 				<?php echo form_open('users/register', $attributes); ?>
 					<div class="col-md-6">
-						<input type="hidden" name="school-form">
+						<input type="hidden" name="registration-form" value="school">
 						<input type="text" name="username" class="form-control" id="username" placeholder="Enter Username">
 						<input type="text" name="contact_person" class="form-control" id="contact_person" placeholder="Enter Contact Person Name">
 						<input type="phone" name="contact_number" class="form-control" id="contact_number" placeholder="Enter Your Contact Number">
@@ -662,7 +673,7 @@ mate@mate.org.in
 						
 					</div>
 					<div class="col-md-6">
-						<input type="number" name="student_strength" class="form-control" id="student_strength" placeholder="Total Number of Students">
+						<input type="number" name="school_strength" class="form-control" id="school_strength" placeholder="Total Number of Students">
 						<input type="url" name="school_website" class="form-control" id="school_website" placeholder="Your School Website Address">
 						
 						<input type="password" name='password' class="form-control" id="password" placeholder="Enter Password">

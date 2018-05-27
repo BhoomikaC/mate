@@ -20,4 +20,8 @@ $(document).ready(function(){
         $('.alert').remove();
     });
 
+    $(document).on('click', '.gender-dropdown .dropdown-menu li a', function(){
+        $('input[name="gender"]').val($(this).text());
+    });
+
 });

@@ -2,13 +2,31 @@
     padding: 0;
 }
 
+.modal{
+    position: absolute;
+}
+
 .alert{
     position: fixed;
-    top: 30px;
+    top: 50px;
     left: 30%;
     z-index: 9999;
     width: 40%;
     text-align: center;
+}
+
+.alert-danger .close{
+    color: #a94442;
+    opacity: 0.6;
+    line-height: 0.6;
+    font-size: 32px;
+}
+
+.alert-success .close{
+    color: #3c763d;
+    opacity: 0.6;
+    line-height: 0.6;
+    font-size: 32px;
 }
 
 .btn-primary{
@@ -152,9 +170,9 @@ nav.navbar-fixed-top .navbar-nav > li > form > a:not(.btn){
 }
 
 /* 
-    *
-    * media queries 
-    *
+    ****************
+     media queries 
+    ****************
 */
 
 
