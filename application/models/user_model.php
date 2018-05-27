@@ -5,7 +5,7 @@
         
         private function get_users()
         {
-            $user_results = $this->db->get('table_students');
+            $user_results = $this->db->get('table_users');
             //return $user_results->result();
             return $user_results;
         }
@@ -17,12 +17,12 @@
            $results = $this->user_model->get_users();
            $row = $results->row();
            if(isset($row)){
-                $db_pwd = $results->row(10)->password;
+                $db_pwd = $results->row(1)->password;
            }else{
                $db_pwd = '';
            }
            if(password_verify($password, $db_pwd)){
-                return $results->row(0)->student_id;
+                return $results->row(0)->username;
            }else{
                return false;
            }
@@ -35,7 +35,8 @@
             $options = ['cost'=>12];
             $encrypted_pwd = password_hash($user_data['password'], PASSWORD_BCRYPT, $options);
             $user_data['password'] = $encrypted_pwd;
-
+            $login_data['password'] = $encrypted_pwd;
+            
             if($user_data['registration_form'] == 'student'){
                 unset($user_data['registration_form']);
                 $inserted_data = $this->db->insert('table_students', $user_data);
