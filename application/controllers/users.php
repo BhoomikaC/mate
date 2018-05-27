@@ -101,12 +101,18 @@
                     'phone_number' => $this->input->post('phone_number'),
                     'school_addr' => $this->input->post('school_addr')
                 );
-               
-                if($this->user_model->create_user($user_data)){
+                
+                $login_data = array(
+                    'username' => $this->input->post('username'),
+                    'password' => $this->input->post('password'),
+                    'user_type' => $this->input->post('registration-form')
+                );
+                
+                if($this->user_model->create_user($user_data, $login_data)){
                     $this->session->set_flashdata('registration_success', 'You have been registered successfully! Please Login');
                     redirect('home');
                 }else{
-                    $this->session->set_flashdata('registration_failed', 'Your registration failed. Please try again!');
+                    $this->session->set_flashdata('registration_failed', 'Your registration failed. Please try again with different username!');
                     redirect('home');
                 }
                 
@@ -124,7 +130,7 @@
             $this->form_validation->set_rules('school_addr', 'School Address', 'trim|required|min_length[3]');
 
 
-            $this->form_validation->set_rules('school_strength', 'Strength of School', 'trim|required|min_length[3]');
+            $this->form_validation->set_rules('school_strength', 'Strength of School', 'trim|required|min_length[1]');
             $this->form_validation->set_rules('school_website', "School Website", 'trim');
             
             $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
@@ -153,12 +159,18 @@
                     'school_strength' => $this->input->post('school_strength'),
                     'school_website' => $this->input->post('school_website')
                 );
+                
+                $login_data = array(
+                    'username' => $this->input->post('username'),
+                    'password' => $this->input->post('password'),
+                    'user_type' => $this->input->post('registration-form')
+                );
                
-                if($this->user_model->create_user($user_data)){
+                if($this->user_model->create_user($user_data, $login_data)){
                     $this->session->set_flashdata('registration_success', 'Your school has been registered successfully! Please Login');
                     redirect('home');
                 }else{
-                    $this->session->set_flashdata('registration_failed', 'Your school couldn\'t be registered. Please try again!');
+                    $this->session->set_flashdata('registration_failed', 'Your school couldn\'t be registered. Please try again with different username!');
                     redirect('home');
                 }
                 
