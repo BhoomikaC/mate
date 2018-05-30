@@ -23,5 +23,18 @@ $(document).ready(function(){
     $(document).on('click', '.gender-dropdown .dropdown-menu li a', function(){
         $('input[name="gender"]').val($(this).text());
     });
-
+    
+    if($("div#login-error").length>0)
+    {
+        $('#login-modal').modal('show');
+    }
+    else if($("div#student-error").length>0)
+    {
+         $('#student-registration-modal').modal('show');
+    }
+    else if($("div#school-error").length>0)
+    {
+         $('#school-registration-modal').modal('show');
+    }
+     
 });
