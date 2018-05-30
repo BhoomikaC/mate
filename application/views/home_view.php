@@ -560,7 +560,7 @@ mate@mate.org.in
 					<?php $attributes = array('id'=>'login_form', 'class'=>'popup-form'); ?>
 
 					<?php if($this->session->flashdata('errors')): ?>
-						<div class="validation_errors">
+						<div id="login-error" class="validation_errors">
 							<?php echo $this->session->flashdata('errors'); ?>
 						</div>
 					<?php endif; ?>
@@ -596,14 +596,18 @@ mate@mate.org.in
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link" data-dismiss="modal"><i class="icon_close_alt2"></i></a>
 				<h3 class="white">Sign Up</h3>
-				<?php $attributes = array('id'=>'student-register-form', 'class'=>'popup-form'); ?>
+				
 
 				<?php if($this->session->flashdata('registration_errors')): ?>
-						<div class="validation_errors">
+                    <?php if($this->session->flashdata('student')): ?>
+						<div id="student-error" class="validation_errors">
 							<?php echo $this->session->flashdata('registration_errors'); ?>
 						</div>
+                    <?php endif; ?>
 				<?php endif; ?>
 				
+                <?php $attributes = array('id'=>'student-register-form', 'class'=>'popup-form'); ?>
+                
 				<?php echo form_open('users/register', $attributes); ?>
 
 					<div class="col-md-6">
@@ -659,9 +663,14 @@ mate@mate.org.in
 				<h3 class="white">Sign Up</h3>
 				<?php $attributes = array('id'=>'school-register-form', 'class'=>'popup-form'); ?>
 
-				<?php 
-					echo validation_errors();
-				?>
+				<?php if($this->session->flashdata('registration_errors')): ?>
+                    <?php if($this->session->flashdata('school')): ?>
+						<div id="school-error" class="validation_errors">
+							<?php echo $this->session->flashdata('registration_errors'); ?>
+						</div>
+                    <?php endif; ?>
+				<?php endif; ?>
+                
 				<?php echo form_open('users/register', $attributes); ?>
 					<div class="col-md-6">
 						<input type="hidden" name="registration-form" value="school">
