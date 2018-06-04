@@ -24,7 +24,7 @@ $(document).ready(function(){
         $('input[name="gender"]').val($(this).text());
     });
     
-    if($("div#login-error").length>0)
+/*    if($("div#login-error").length>0)
     {
         $('#login-modal').modal('show');
     }
@@ -35,6 +35,16 @@ $(document).ready(function(){
     else if($("div#school-error").length>0)
     {
          $('#school-registration-modal').modal('show');
-    }
+    }*/
      
+    $.validate();
+    
+    /*$.validate({
+        modules : 'location, date, security, file',
+        onModulesLoaded : function() {
+          $('#country').suggestCountry();
+        }
+      });*/
+
+   
 });

@@ -49,7 +49,7 @@
 
     <div class="main-wrapper">
         <div class="col-xs-12 col-md-12 pad-0">
-				<nav class="navbar gallery_view">
+				<nav class="navbar gallery-view">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
@@ -153,5 +153,7 @@
 	<script src="<?php echo base_url(); ?>assets/js/jquery.onepagenav.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/mate-script.js"></script>
+    <!--<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>-->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.form-validator.min.js"></script>
 </body>
 </html>

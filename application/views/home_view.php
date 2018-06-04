@@ -559,19 +559,13 @@ mate@mate.org.in
 
 					<?php $attributes = array('id'=>'login_form', 'class'=>'popup-form'); ?>
 
-					<?php if($this->session->flashdata('errors')): ?>
-						<div id="login-error" class="validation_errors">
-							<?php echo $this->session->flashdata('errors'); ?>
-						</div>
-					<?php endif; ?>
-
 					<?php echo form_open('users/login', $attributes); ?>
 
 						<div class="form-group">
-							<input type="text" name="username" class="form-control" id="username" placeholder="Enter Username">
+							<input name="username" class="form-control" id="username" data-validation="length" data-validation-length="min3" placeholder="Enter Username">
 						</div>
 						<div class="form-group">
-							<input type="password" name='password' class="form-control" id="password" placeholder="Enter Password">
+							<input type="password" name='password' class="form-control" id="password" data-validation="length" data-validation-length="min3"  placeholder="Enter Password">
 						</div>
 
 						<button type="submit" name='submit' class="btn btn-submit">Submit</button>
@@ -597,30 +591,31 @@ mate@mate.org.in
 				<a href="#" class="close-link" data-dismiss="modal"><i class="icon_close_alt2"></i></a>
 				<h3 class="white">Sign Up</h3>
 				
-
-				<?php if($this->session->flashdata('registration_errors')): ?>
-                    <?php if($this->session->flashdata('student')): ?>
-						<div id="student-error" class="validation_errors">
-							<?php echo $this->session->flashdata('registration_errors'); ?>
-						</div>
-                    <?php endif; ?>
-				<?php endif; ?>
-				
                 <?php $attributes = array('id'=>'student-register-form', 'class'=>'popup-form'); ?>
                 
 				<?php echo form_open('users/register', $attributes); ?>
 
 					<div class="col-md-6">
 						<input type="hidden" name="registration-form" value="student">
-						<input type="text" name="username" value="<?php echo set_value('username'); ?>" class="form-control" id="username" placeholder="Enter Username">
-						<input type="text" name="first_name" value="<?php echo set_value('first_name'); ?>" class="form-control" id="first_name" placeholder="Enter First Name">
-						<input type="text" name="last_name" value="<?php echo set_value('last_name'); ?>" class="form-control" id="last_name" placeholder="Enter Last Name">
-						<input type="text" name="father_name" value="<?php echo set_value('father_name'); ?>" class="form-control" id="father_name" placeholder="Enter Your Father's Name">
-						<input type="date" name="dob" value="<?php echo set_value('dob'); ?>" class="form-control" id="dob" placeholder="Enter Your Date of Birth">
+						<div>
+                            <input type="text" name="username" value="<?php echo set_value('username'); ?>" class="form-control" id="username" data-validation="length" data-validation-length="min3" placeholder="Enter Username">
+                        </div>
+                        <div>
+                            <input type="text" name="first_name" value="<?php echo set_value('first_name'); ?>" class="form-control" id="first_name" data-validation="length" data-validation-length="min3" placeholder="Enter First Name">
+						</div>
+                        <div>
+                            <input type="text" name="last_name" value="<?php echo set_value('last_name'); ?>" class="form-control" id="last_name" data-validation="length" data-validation-length="min3" placeholder="Enter Last Name">
+						</div>
+                        <div>
+                            <input type="text" name="father_name" value="<?php echo set_value('father_name'); ?>" class="form-control" id="father_name" data-validation="length" data-validation-length="min3" placeholder="Enter Your Father's Name">
+                        </div>
+						<div>
+                            <input type="date" name="dob" value="<?php echo set_value('dob'); ?>" class="form-control" id="dob" data-validation="required" placeholder="Enter Your Date of Birth">
+                        </div>
 						
 						<div class="dropdown gender-dropdown">
 							<input type="hidden" name="gender"/>
-							<button id="gender-button" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button id="gender-button" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-validation="required">
 								Gender
 							</button>
 							<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="gender-label">
@@ -631,11 +626,21 @@ mate@mate.org.in
 						
 					</div>
 					<div class="col-md-6">
-						<input type="phone" name="phone_number" value="<?php echo set_value('phone_number'); ?>" class="form-control" id="phone_number" placeholder="Enter Your Contact Number">
-						<input type="email" name="email_id" value="<?php echo set_value('email_id'); ?>" class="form-control" id="email_id" placeholder="Enter Email Id">
-						<input type="text" name="school_addr" value="<?php echo set_value('school_addr'); ?>" class="form-control" id="school_addr" placeholder="Enter Your School Address">
-						<input type="password" name='password' class="form-control" id="password" placeholder="Enter Password">
-						<input type="password" name='confirm_password' class="form-control" id="confirm_password" placeholder="Confirm Password">
+						<div>
+                            <input type="phone" name="phone_number" value="<?php echo set_value('phone_number'); ?>" class="form-control" id="phone_number" data-validation="number length" data-validation-length="10" placeholder="Enter Your Contact Number">
+                        </div>
+                        <div>
+                            <input type="email" name="email_id" value="<?php echo set_value('email_id'); ?>" class="form-control" id="email_id" data-validation="email" placeholder="Enter Email Id">
+                        </div>
+                        <div>
+						    <input type="text" name="school_addr" value="<?php echo set_value('school_addr'); ?>" class="form-control" id="school_addr" data-validation="length" data-validation-length="min3" placeholder="Enter Your School Address">
+                        </div>
+                        <div>
+						    <input type="pass_confirmation" name='password' class="form-control" id="password" data-validation="strength" data-validation-strength="2" placeholder="Enter Password">
+                        </div>
+                        <div>
+                            <input type="password" name='confirm_password' class="form-control" id="confirm_password" data-validation="confirmation" placeholder="Confirm Password">
+                        </div>    
 					</div>
 
 					<button type="submit" class="btn btn-submit">Submit</button>
@@ -662,31 +667,39 @@ mate@mate.org.in
 				<a href="#" class="close-link" data-dismiss="modal"><i class="icon_close_alt2"></i></a>
 				<h3 class="white">Sign Up</h3>
 				<?php $attributes = array('id'=>'school-register-form', 'class'=>'popup-form'); ?>
-
-				<?php if($this->session->flashdata('registration_errors')): ?>
-                    <?php if($this->session->flashdata('school')): ?>
-						<div id="school-error" class="validation_errors">
-							<?php echo $this->session->flashdata('registration_errors'); ?>
-						</div>
-                    <?php endif; ?>
-				<?php endif; ?>
                 
 				<?php echo form_open('users/register', $attributes); ?>
 					<div class="col-md-6">
 						<input type="hidden" name="registration-form" value="school">
-						<input type="text" name="username" class="form-control" id="username" placeholder="Enter Username">
-						<input type="text" name="contact_person" class="form-control" id="contact_person" placeholder="Enter Contact Person Name">
-						<input type="phone" name="contact_number" class="form-control" id="contact_number" placeholder="Enter Your Contact Number">
-						<input type="email" name="email_id" class="form-control" id="email_id" placeholder="Enter Email Id">
-						<input type="text" name="school_addr" class="form-control" id="school_addr" placeholder="Enter Your School Address">
-						
+                        <div>
+						    <input type="text" name="username" class="form-control" id="username" data-validation="length" data-validation-length="min3" placeholder="Enter Username">
+                        </div>
+                        <div>
+						    <input type="text" name="contact_person" class="form-control" id="contact_person" data-validation="length" data-validation-length="min3" placeholder="Enter Contact Person Name">
+                        </div>
+                        <div>
+						    <input type="phone" name="contact_number" class="form-control" id="contact_number" data-validation="number length" data-validation-length="10" placeholder="Enter Your Contact Number">
+						</div>
+                        <div>
+                            <input type="email" name="email_id" class="form-control" id="email_id" data-validation="email" placeholder="Enter Email Id">
+						</div>
+                        <div>
+                            <input type="text" name="school_addr" class="form-control" id="school_addr" data-validation="length" data-validation-length="min3" placeholder="Enter Your School Address">
+						</div>
 					</div>
 					<div class="col-md-6">
-						<input type="number" name="school_strength" class="form-control" id="school_strength" placeholder="Total Number of Students">
-						<input type="url" name="school_website" class="form-control" id="school_website" placeholder="Your School Website Address">
-						
-						<input type="password" name='password' class="form-control" id="password" placeholder="Enter Password">
-						<input type="password" name='confirm_password' class="form-control" id="confirm_password" placeholder="Confirm Password">
+						<div>
+                            <input type="number" name="school_strength" class="form-control" id="school_strength" data-validation="number required" placeholder="Total Number of Students">
+                        </div>
+                        <div>
+				            <input type="url" name="school_website" class="form-control" id="school_website" data-validation="url" placeholder="Your School Website Address">
+						</div>
+                        <div>
+						    <input type="password" name='password' class="form-control" id="password" data-validation="length" data-validation-length="min3" placeholder="Enter Password">
+						</div>
+                        <div>
+                            <input type="password" name='confirm_password' class="form-control" id="confirm_password" placeholder="Confirm Password">
+                        </div>
 					</div>
 					<button type="submit" class="btn btn-submit">Submit</button>
 				<?php echo form_close(); ?>
