@@ -146,9 +146,9 @@
 
 
     <!-- Scripts -->
-    
+ <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->  
 	<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.1.min.js"></script>
-	<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script> -->
+    <!--<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script> -->
 	<script src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/wow.min.js"></script>
@@ -157,7 +157,9 @@
 	<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/mate-script.js"></script>
     <!--<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>-->
-    <script src="<?php echo base_url(); ?>assets/js/jquery.form-validator.min.js"></script>
+  <!--  <script src="<?php echo base_url(); ?>assets/js/jquery.form-validator.min.js"></script>-->
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     
 </body>
 </html>

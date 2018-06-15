@@ -612,10 +612,20 @@ mate@mate.org.in
 						<div>
                             <input type="date" name="dob" value="<?php echo set_value('dob'); ?>" class="form-control" id="dob" data-validation="required" placeholder="Enter Your Date of Birth">
                         </div>
+                        <!--<div class="dropdown gender-dropdown">
+							<input type="hidden" name="gender"/>
+                            <select name="answer" id="gender-button" data-validation="required" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<option disabled selected hidden>Gender</option>
+                                <ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="gender-label">
+								<option class="animated lightSpeedIn"><a href="#">Male</a></option>
+								<option class="animated lightSpeedIn"><a href="#">Female</a></option>
+							     </ul>
+							</select>							
+						</div>-->
 						
 						<div class="dropdown gender-dropdown">
 							<input type="hidden" name="gender"/>
-                            <button id="gender-button" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-validation="required">
+                            <button id="gender-button" data-validation="required" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Gender
 							</button>
 							<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="gender-label">
@@ -636,10 +646,10 @@ mate@mate.org.in
 						    <input type="text" name="school_addr" value="<?php echo set_value('school_addr'); ?>" class="form-control" id="school_addr" data-validation="length" data-validation-length="min3" placeholder="Enter Your School Address">
                         </div>
                         <div>
-						    <input type="pass_confirmation" name='password' class="form-control" id="password" data-validation="strength" data-validation-strength="2" placeholder="Enter Password">
+						    <input type="password" name='pass_confirmation' class="form-control" id="pass_confirmation" data-validation="strength" data-validation-strength="2" placeholder="Enter Password">
                         </div>
                         <div>
-                            <input type="password" name='confirm_password' class="form-control" id="confirm_password" data-validation="confirmation" placeholder="Confirm Password">
+                            <input type="password" name='pass' class="form-control" id="pass" data-validation="confirmation" placeholder="Confirm Password">
                         </div>    
 					</div>
 
@@ -648,7 +658,6 @@ mate@mate.org.in
 			</div>
 		</div>
 	</div>
-
 
 
 	<!-- 
@@ -695,10 +704,10 @@ mate@mate.org.in
 				            <input type="url" name="school_website" class="form-control" id="school_website" data-validation="url" placeholder="Your School Website Address">
 						</div>
                         <div>
-						    <input type="password" name='password' class="form-control" id="password" data-validation="length" data-validation-length="min3" placeholder="Enter Password">
+						    <input type="password" name='pass_confirmation' class="form-control" id="pass_confirmation" data-validation="strength" data-validation-strength="2" placeholder="Enter Password">
 						</div>
                         <div>
-                            <input type="password" name='confirm_password' class="form-control" id="confirm_password" placeholder="Confirm Password">
+                            <input type="password" name='pass' data-validation="confirmation" class="form-control" id="pass" placeholder="Confirm Password">
                         </div>
 					</div>
 					<button type="submit" class="btn btn-submit">Submit</button>

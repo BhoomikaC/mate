@@ -92,7 +92,7 @@
                 $user_data = array(
                     'registration_form'=> $this->input->post('registration-form'),
                     'username' => $this->input->post('username'),
-                    'password'=> $this->input->post('password'),
+                    'password'=> $this->input->post('pass_confirmation'),
                     'first_name' => $this->input->post('first_name'),
                     'last_name' => $this->input->post('last_name'),
                     'email_id' => $this->input->post('email_id'),
@@ -106,7 +106,7 @@
                 $login_data = array(
                     'username' => $this->input->post('username'),
                     'contact_number' => $this->input->post('phone_number'),
-                    'password' => $this->input->post('password'),
+                    'password' => $this->input->post('pass_confirmation'),
                     'user_type' => $this->input->post('registration-form')
                 );
                 
@@ -154,7 +154,7 @@
                 $user_data = array(
                     'registration_form'=> $this->input->post('registration-form'),
                     'username' => $this->input->post('username'),
-                    'password'=> $this->input->post('password'),
+                    'password'=> $this->input->post('pass_confirmation'),
                     'contact_person' => $this->input->post('contact_person'),
                     'contact_number' => $this->input->post('contact_number'),
                     'email_id' => $this->input->post('email_id'),
@@ -166,7 +166,7 @@
                 $login_data = array(
                     'username' => $this->input->post('username'),
                     'contact_number' => $this->input->post('contact_number'),
-                    'password' => $this->input->post('password'),
+                    'password' => $this->input->post('pass_confirmation'),
                     'user_type' => $this->input->post('registration-form')
                 );
                

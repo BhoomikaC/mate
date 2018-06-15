@@ -37,14 +37,11 @@ $(document).ready(function(){
          $('#school-registration-modal').modal('show');
     }*/
      
-    $.validate();
+    /*$.validate();*/
     
-    /*$.validate({
-        modules : 'location, date, security, file',
-        onModulesLoaded : function() {
-          $('#country').suggestCountry();
-        }
-      });*/
+    $.validate({
+        modules : 'security'
+    });
 
    
 });
