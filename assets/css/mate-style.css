@@ -169,6 +169,21 @@ nav.navbar-fixed-top .navbar-nav > li > form > a:not(.btn){
     border-top: 1px solid rgba(0,0,0,.125);
 }
 
+/** Gender dropdown starts **/
+
+.popup-form .dropdown option {
+	width: 100%;
+	color: #00a8ff;
+    font-size: 16px;
+}
+
+.popup-form .dropdown option:hover {
+	color: #fff;
+	background: #00a8ff;
+}
+
+/** Gender dropdown ends **/
+
 /* 
     ****************
      media queries 

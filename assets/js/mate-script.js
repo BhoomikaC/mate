@@ -20,24 +20,17 @@ $(document).ready(function(){
         $('.alert').remove();
     });
 
-    $(document).on('click', '.gender-dropdown .dropdown-menu li a', function(){
+    //increase height for select option in gender
+    //$('.gender-dropdown').find('option').css("height", "25px");
+    
+    /*$(document).on('click', ' .dropdown-menu li a', function(){
         $('input[name="gender"]').val($(this).text());
     });
+    */
     
-/*    if($("div#login-error").length>0)
-    {
-        $('#login-modal').modal('show');
-    }
-    else if($("div#student-error").length>0)
-    {
-         $('#student-registration-modal').modal('show');
-    }
-    else if($("div#school-error").length>0)
-    {
-         $('#school-registration-modal').modal('show');
-    }*/
-     
-    /*$.validate();*/
+    $(document).on('click', '#gender-select', function(){
+        $('input[name="gender"]').val($('#gender-select').val());
+    });
     
     $.validate({
         modules : 'security'

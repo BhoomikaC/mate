@@ -612,18 +612,8 @@ mate@mate.org.in
 						<div>
                             <input type="date" name="dob" value="<?php echo set_value('dob'); ?>" class="form-control" id="dob" data-validation="required" placeholder="Enter Your Date of Birth">
                         </div>
-                        <!--<div class="dropdown gender-dropdown">
-							<input type="hidden" name="gender"/>
-                            <select name="answer" id="gender-button" data-validation="required" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<option disabled selected hidden>Gender</option>
-                                <ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="gender-label">
-								<option class="animated lightSpeedIn"><a href="#">Male</a></option>
-								<option class="animated lightSpeedIn"><a href="#">Female</a></option>
-							     </ul>
-							</select>							
-						</div>-->
-						
-						<div class="dropdown gender-dropdown">
+                        						
+						<!--<div class="dropdown gender-dropdown">
 							<input type="hidden" name="gender"/>
                             <button id="gender-button" data-validation="required" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Gender
@@ -632,7 +622,15 @@ mate@mate.org.in
 								<li class="animated lightSpeedIn"><a href="#">Male</a></li>
 								<li class="animated lightSpeedIn"><a href="#">Female</a></li>
 							</ul>
-						</div>
+						</div>-->
+                        <div class="dropdown gender-dropdown">
+                            <input type="hidden" name="gender"/>
+                            <select id="gender-select" name="answer" class="form-control form-white dropdown" data-toggle="dropdown" data-validation="required">
+                                <option class="dropdown-menu animated fadeIn" value="">Gender</option>
+                                <option class="animated lightSpeedIn" value="Male">Male</option>
+                                <option class="animated lightSpeedIn" value="Female">Female</option>
+                            </select>
+                        </div>
 						
 					</div>
 					<div class="col-md-6">
